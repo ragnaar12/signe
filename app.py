@@ -4,6 +4,15 @@ from torchvision import transforms
 from PIL import Image
 import io
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bienvenue sur HBA Signe ! API de prédiction en langue des signes."
+
+
 
 from flask import Flask, request, render_template
 
