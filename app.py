@@ -4,6 +4,19 @@ from torchvision import transforms
 from PIL import Image
 import io
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Bienvenue sur HBA Signe !'
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    return {'prediction': 'a'}  # test simple
+
+
 
 from flask import Flask
 
