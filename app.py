@@ -4,6 +4,9 @@ from torchvision import transforms
 from PIL import Image
 import io
 
+torch.save(model, "model.pth")
+
+
 app = Flask(__name__)
 
 # Charger ton modèle
