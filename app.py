@@ -4,6 +4,21 @@ from torchvision import transforms
 from PIL import Image
 import io
 
+
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    # traitement de l’image ici
+    return "Résultat ici"
+
+
 torch.save(model, "model.pth")
 
 from flask import Flask
