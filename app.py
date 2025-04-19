@@ -6,6 +6,19 @@ import io
 
 torch.save(model, "model.pth")
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def home():
+    return "Hello depuis HBA Signe !"
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    return {'prediction': 'a'}  # temporairement
+
+
 
 app = Flask(__name__)
 
